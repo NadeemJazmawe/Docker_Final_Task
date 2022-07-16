@@ -23,7 +23,7 @@ pipeline {
 
     stage('Push Image') {
       steps {
-			sh 'docker push waheeb96/bitcoin-tracker'
+			sh 'docker push nadeemjazmawe/bitcoin-price'
         }
       }
     }
