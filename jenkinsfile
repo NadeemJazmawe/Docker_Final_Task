@@ -29,14 +29,5 @@ pipeline {
     }
   
 
-  post {
-        success {
-            slackSend channel: 'jenkins_closing_task', message: 'Build Success'
-        }
-         
-        failure {
-            slackSend channel: 'jenkins_closing_task', message: 'Build Failed'
-        }
-    }
     
 }
