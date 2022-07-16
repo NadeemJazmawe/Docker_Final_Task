@@ -2,32 +2,32 @@ pipeline {
 
   agent any
 
- environment {
+  environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
- 
+
   stages {
 
     stage('Login to dockerhub') {
 
-	steps {
-		sh 'sleep 2'
-	}
-    }
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW |  docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
 
     stage('Build Image') {
       steps {
-        sh 'sleep 3'
+        sh 'docker build -t bitcoin-price:latest .'
       }
     }
 
     stage('Push Image') {
       steps {
-	sh 'sleep 1'
+			sh 'docker push waheeb96/bitcoin-tracker'
         }
       }
     }
-  
+  }
 
     
 }
