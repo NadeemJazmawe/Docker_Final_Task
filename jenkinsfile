@@ -2,24 +2,13 @@ pipeline {
 
   agent any
 
-  environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
-	}
 
   stages {
-
-   
     stage('Build Image') {
       steps {
 				sh 'docker build -t fares111/docker_final_task:latest .'
       }
     }
-
-    stage('Push Image') {
-      steps {
-			sh 'docker push nadeemjazmawe/bitcoin-price'
-        }
-      }
     }
 
     
