@@ -11,7 +11,7 @@ pipeline {
    
     stage('Build Image') {
       steps {
-        sh 'docker build -t bitcoin-price:latest .'
+				sh 'docker build -t fares111/docker_final_task:latest .'
       }
     }
 
