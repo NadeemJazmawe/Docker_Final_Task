@@ -11,13 +11,13 @@ pipeline {
 
     stage('Build Image') {
       steps {
-        sh 'docker build -t bitcoin-price:latest .'
+        sh 'sudo docker build -t bitcoin-price:latest .'
       }
     }
 
     stage('Push Image') {
       steps {
-			sh 'docker push nadeemjazmawe/bitcoin-price'
+			sh 'sudo docker push nadeemjazmawe/bitcoin-price'
         }
       }
     }
