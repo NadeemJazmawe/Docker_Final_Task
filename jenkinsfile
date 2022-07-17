@@ -6,7 +6,8 @@ pipeline {
   stages {
     stage('Build Image') {
       steps {
-				sh 'docker build -t nadeem/docker_final_task:latest .'
+      
+				sh 'sudo docker build -t nadeem/docker_final_task:latest .'
       }
     }
     }
