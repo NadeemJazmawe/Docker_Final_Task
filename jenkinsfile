@@ -22,12 +22,7 @@ pipeline{
 			}
 		}
 
-		stage('Push') {
-
-			steps {
-				sh 'sudo docker push medris2796/bitcoin-final-task:latest'
-			}
-		}
+		
 	}
 
 	post {
