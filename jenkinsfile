@@ -1,35 +1,26 @@
-pipeline{
+pipeline {
 
-	agent any
+  agent any
 
-	environment {
+  environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
 
-	stages {
+  stages {
 
-		stage('Build') {
 
-			steps {
-				sh 'sudo docker build -t medris2796/bitcoin-final-task:latest .'
-			}
-		}
+    stage('Build Image') {
+      steps {
+        sh 'docker build -t bitcoin-price:latest .'
+      }
+    }
 
-		 stage('Push Image') {
+    stage('Push Image') {
       steps {
 			sh 'docker push nadeemjazmawe/bitcoin-price'
         }
       }
     }
 
-
-		
-	}
-
-	post {
-		always {
-			sh 'docker logout'
-		}
-	}
-
+    
 }
