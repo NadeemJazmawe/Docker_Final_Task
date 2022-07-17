@@ -8,13 +8,7 @@ pipeline {
 
   stages {
 
-    stage('Login to dockerhub') {
-
-			steps {
-				sh 'sudo su -S'
-			}
-		}
-
+   
     stage('Build Image') {
       steps {
         sh 'docker build -t bitcoin-price:latest .'
