@@ -3,9 +3,9 @@
 
 ### About ###
 Create a Python Web APP using FLASK that:
-● Presents the Current BitCoin Price (LIVE)
-● Stores the price in a Redis Database
-● Presents the Average Price for the last 10 minutes (LIVE)
+* Presents the Current BitCoin Price (LIVE)
+* Stores the price in a Redis Database
+* Presents the Average Price for the last 10 minutes (LIVE)
 
 ## Run localy ###
 
